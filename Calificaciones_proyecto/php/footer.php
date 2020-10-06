@@ -2,7 +2,7 @@
      <!-- Footer -->
      <footer class="page-footer font-small blue-grey lighten-5">
 
-        <div style="background-color: #21d192;">
+        <div style="background-color: black;">
         <div class="container">
     
             <!-- Grid row-->
@@ -10,7 +10,7 @@
     
             <!-- Grid column -->
             <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                <h6 class="mb-0">Get connected with us on social networks!</h6>
+                <h6 class="mb-0" style="color: white;">Contactate con nosotros en nuestras redes sociales!</h6>
             </div>
             <!-- Grid column -->
     
@@ -118,7 +118,7 @@
             <p>
                 <i class="fas fa-home mr-3"></i> Uriangato, Guanajuato, Mexico</p>
             <p>
-                <i class="fas fa-envelope mr-3"></i> no4451001856@outlook.com</p>
+                <i class="fas fa-envelope mr-3"></i>no4451001856@outlook.com</p>
             <p>
                 <i class="fas fa-phone mr-3"></i> +52 445 46 225 15</p>
             <p>

@@ -1,0 +1,19 @@
+body {
+  margin:0;
+  padding:0;
+}
+
+/*card titulos*/
+label{
+    font-size: 18px;
+}
+/*card datos del usuario*/
+.card-title{
+    font-size: 17px;
+    color: white;
+}
+
+.card-columns{ 
+   
+  font-weight: 700;
+}
