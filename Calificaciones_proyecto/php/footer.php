@@ -1,6 +1,6 @@
 
      <!-- Footer -->
-     <footer class="page-footer font-small blue-grey lighten-5">
+     <footer class="page-footer font-small blue-grey lighten-5" style="width: 100%;">
 
         <div style="background-color: black;">
         <div class="container">

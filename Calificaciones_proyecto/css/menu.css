@@ -17,3 +17,16 @@ label{
    
   font-weight: 700;
 }
+
+
+a:hover{
+  background: blue;
+}
+
+td.details-control {
+  background: url('../img/anadir.svg') no-repeat center center;
+  cursor: pointer;
+}
+tr.shown td.details-control {
+  background: url('../img/flecha-hacia-abajo.svg') no-repeat center center;
+}
