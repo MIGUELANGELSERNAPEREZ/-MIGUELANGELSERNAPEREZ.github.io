@@ -162,13 +162,14 @@ function cargarMaterias(){
 }
 
 function tablaMaterias(lista){
+
     debugger;
     $("#tabla").append($("<thead></thead>")
     .append($("<tr></tr>")
     .append($("<th></th>").attr("scope","col").text(""))
     .append($("<th></th>").attr("scope","col").text("Materia"))
     .append($("<th></th>").attr("scope","col").text("Tipo"))
-    .append($("<th></th>").attr("scope","col").text("Grado"))
+    .append($("<th></th>").attr("scope","col").text("Unidades"))
     .append($("<th></th>").attr("scope","col").text("Docente"))
     
     
@@ -187,10 +188,10 @@ function tablaMaterias(lista){
     for(let i of lista){
         insertar.innerHTML += `
             <tr>
-                <th scope="row" onclick="calificcaiones(${i.idMateria})">${sum}</th>
+                <th scope="row" onclick="calificcaiones(${i.idMateria} , ${i.unidades})">${sum}</th>
                 <td>${i.nombre}</td>
                 <td>${i.tipoM}</td>
-                <td>${i.grado}</td>
+                <td>${i.unidades}</td>
                 <td>${i.nombreUsu + " " + i.apellidoP + " " + i.apellidoM}</td>
             </tr>
          
@@ -204,7 +205,7 @@ function tablaMaterias(lista){
 
 }
 
-function calificcaiones(idmateria){
+function calificcaiones(idmateria , unidades){
     CancelarCambios();
     debugger;
     let idalumno = document.getElementById("alumnoId").value;
@@ -223,7 +224,7 @@ function calificcaiones(idmateria){
       
         console.log(calificacion);
         if(calificacion.mensaje == null){
-            mostrarCalificcaiones(calificacion);
+            mostrarCalificcaiones(calificacion, unidades);
         }else{
             //error
             mensaje.innerHTML = 
@@ -248,10 +249,10 @@ function CancelarCambios(){
     posicion.innerHTML = "";
   }
 
-function mostrarCalificcaiones(calificaciones){
+function mostrarCalificcaiones(calificaciones , unidades){
 debugger;
     let posicion = document.getElementById("mdlunidades");
-
+    let cal = 0;
     for(let i =0; i< calificaciones.length; i++) {
         posicion.innerHTML += `
         <div class="col">
@@ -259,9 +260,18 @@ debugger;
             <input class="form-control" type="text" name="txt${calificaciones[i].bimestre}" id="txt${calificaciones[i].bimestre}"
             style = "width:50px;" value = "${calificaciones[i].calificacion}">  
         </div>`;   
-
-       
+        cal+=  parseInt(calificaciones[i].calificacion);
+        console.log(cal);
     }
+
+    console.log(cal/unidades);
+    posicion.innerHTML += `
+        <div class="col">
+            <label for="">Calificacion promedio</label>
+            <input class="form-control" type="text" name="txtPromedio" id="txtPromedio"
+            style = "width:70px;" value = "${cal/unidades}">  
+        </div>`;  
+
 
     $("#mdlConfirmar").modal("toggle"); 
    

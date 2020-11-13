@@ -12,7 +12,7 @@ class DaoMaterias{
         include("../php/conexion.php");
          
     
-            $sentencia = "select usuario.nombre, usuario.apellidoPaterno, usuario.apellidoMaterno,materia.idMateria, materia.nombreMateria, materia.grado, materia.TipoMateria
+            $sentencia = "select usuario.nombre, usuario.apellidoPaterno, usuario.apellidoMaterno,materia.idMateria, materia.nombreMateria, materia.Unidades, materia.TipoMateria
             from docente inner join usuario on docente.idusuario = usuario.id
             inner join detalle_materia_docente on detalle_materia_docente.iddocente = docente.id
             inner join materia on detalle_materia_docente.idmateria = materia.idMateria inner join detalle_grupo_materia
@@ -29,7 +29,7 @@ class DaoMaterias{
                 $obj = new Materias();
                 
                 $obj ->nombre = $datos["nombreMateria"];
-                $obj ->grado = $datos["grado"];
+                $obj ->unidades = $datos["Unidades"];
                 $obj ->tipoM = $datos["TipoMateria"];
                 $obj ->apellidoP = $datos["apellidoPaterno"];
                 $obj ->apellidoM = $datos["apellidoMaterno"];
